@@ -284,3 +284,8 @@ pre-commit run --all-files
 ## License
 
 MIT License
+
+
+## Architecture Decision Records
+
+See [docs/adr/README.md](./docs/adr/README.md) for the proposed repository/deployment identity decision.
