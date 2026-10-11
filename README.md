@@ -8,23 +8,13 @@ The platform is designed around a provider-oriented architecture so that geospat
 
 ---
 
-## Operational Deployment
+## Relationship to Geo-AI V4 and deployment evidence
 
-The current platform is deployed and online on **Google Cloud Run**.
+This repository contains the earlier Python/FastAPI, ML and Terraform-oriented Geo-AI implementation. It is distinct from the current **Trimindslabs-Geo-AI-V4** repository, whose deployed application uses Node.js/Express and TypeScript.
 
-| Property | Current state |
-|---|---|
-| Platform | Google Cloud Run |
-| Region | `europe-west1` |
-| Deployment | Cloud Run |
-| Version | `v4` |
-| Status | Online / operational |
+The service URL previously associated with this project is historical evidence only; this README does not assert that this repository's Python application is the code currently serving that URL. Verify the Cloud Run service's current image digest, source commit, revision and traffic before claiming a live deployment for this repository.
 
-**Live service:**
-
-[Triminds Geo AI — Cloud Run v4](https://triminds-geo-ai-v4-1091629879450.europe-west1.run.app/)
-
-The Cloud Run deployment represents the current operational instance of the platform.
+![Predecessor architecture](./docs/diagrams/geo-ai-predecessor-architecture.svg)
 
 ---
 
@@ -63,15 +53,13 @@ The architecture is intended to support multiple Earth Observation providers and
 
 ---
 
-## Current Deployment vs. Local Validation
+## Repository execution paths
 
 The repository contains two complementary execution paths.
 
-### Operational Cloud Deployment
+### Historical cloud deployment reference
 
-The current production-oriented deployment runs on Google Cloud Run as version **v4**.
-
-This is the environment used to expose the platform as an online service.
+A Cloud Run URL was previously associated with this ecosystem. The live image provenance has not been established for this Python repository, so the URL is not presented here as proof that this code is currently serving traffic.
 
 ### Local Demo
 
@@ -210,75 +198,26 @@ These components can be enabled according to the deployment environment.
 
 ---
 
-## Google Cloud
+## Google Cloud configuration and status
 
-Google Cloud is now part of the **operational deployment path**, not only a future integration target.
+This repository contains Terraform modules and a Python/FastAPI container path for Google Cloud. These files describe configurable infrastructure; they do not prove that the Python application is the image currently serving Cloud Run traffic.
 
-The current online deployment runs on:
+The current Node.js/Express application and its Cloud Run deployment workflow are maintained in the separate [Trimindslabs-Geo-AI-V4 repository](https://github.com/RodrigoDiasDeOliveira/Trimindslabs-Geo-AI-V4). Keep the two implementation lineages distinct.
 
-```text
-Google Cloud
-      │
-      ▼
-Cloud Run
-      │
-      ▼
-Triminds Geo AI v4
-      │
-      ▼
-Online Service
-```
-
-Additional Google Cloud services can be introduced according to the requirements of specific geospatial workloads.
-
----
-
-## Engineering and Operational Status
-
-The project should be understood through separate validation levels:
-
-| Area | Status |
+| Evidence area | Status in this repository |
 |---|---|
-| Local deterministic demo | Validated |
-| FastAPI inference path | Validated |
-| Container execution | Validated |
-| Google Cloud integration | Implemented |
-| Cloud Run deployment | **Operational — v4** |
-| Online service | **Available** |
-| Additional Earth Observation providers | Evolutionary |
-| Advanced geospatial workloads | Under continuous development |
-
-The important distinction is that **Cloud Run v4 is an actual operational deployment**, while the platform itself continues to evolve toward broader operational maturity.
-
----
+| Python/FastAPI and ML code | Present |
+| Terraform/GCP definitions | Present; target values require review |
+| Local demo and synthetic dataset | Development/validation path; not real satellite imagery |
+| Latest recorded main-branch CI | Success on 2026-09-15, commit `a67bf53303` ([run](https://github.com/RodrigoDiasDeOliveira/Trimindslabs-Geo-AI/actions/runs/35007375746)) |
+| Current Cloud Run revision built from this repository | Not verified |
+| Current live revision and image provenance | Must be checked in GCP before any deployment claim |
 
 ## Production Readiness
 
-Triminds Geo AI follows the Triminds engineering principle of separating implementation from operational evidence.
+Do not classify this repository as currently operational based only on Terraform files, an old service URL, or a successful historical CI run. Before making a live deployment claim, record the Cloud Run service, project, region, revision, immutable image digest, source commit, traffic allocation and verification timestamp.
 
-A component may exist in the codebase without being considered operational.
-
-Conversely, the Cloud Run v4 deployment provides concrete evidence that the platform can be deployed and exposed as an online service.
-
-The maturity model is therefore:
-
-```text
-Implemented
-    │
-    ▼
-Validated
-    │
-    ▼
-Deployed
-    │
-    ▼
-Operational
-    │
-    ▼
-Operationally Mature
-```
-
-The current Geo AI platform has reached the **Operational** stage through its Cloud Run v4 deployment, while the platform itself continues to evolve toward broader operational maturity.
+The current V4 runtime has its own documented deployment workflow and implementation constraints in the separate repository. Historical deployment evidence may remain useful, but must not be attributed to this Python repository without matching image provenance.
 
 ---
 
@@ -296,3 +235,8 @@ pre-commit run --all-files
 ## License
 
 MIT License
+
+
+## Architecture Decision Records
+
+See [docs/adr/README.md](./docs/adr/README.md) for the proposed repository/deployment identity decision.
