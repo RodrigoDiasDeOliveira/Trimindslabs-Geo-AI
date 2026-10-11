@@ -16,19 +16,6 @@ The service URL previously associated with this project is historical evidence o
 
 ![Predecessor architecture](./docs/diagrams/geo-ai-predecessor-architecture.svg)
 
----|
-| Platform | Google Cloud Run |
-| Region | `europe-west1` |
-| Deployment | Cloud Run |
-| Version | `v4` |
-| Status | Online / operational |
-
-**Live service:**
-
-[Triminds Geo AI — Cloud Run v4](https://triminds-geo-ai-v4-1091629879450.europe-west1.run.app/)
-
-The Cloud Run deployment represents the current operational instance of the platform.
-
 ---
 
 ## Architecture
@@ -66,15 +53,13 @@ The architecture is intended to support multiple Earth Observation providers and
 
 ---
 
-## Current Deployment vs. Local Validation
+## Repository execution paths
 
 The repository contains two complementary execution paths.
 
-### Operational Cloud Deployment
+### Historical cloud deployment reference
 
-The current production-oriented deployment runs on Google Cloud Run as version **v4**.
-
-This is the environment used to expose the platform as an online service.
+A Cloud Run URL was previously associated with this ecosystem. The live image provenance has not been established for this Python repository, so the URL is not presented here as proof that this code is currently serving traffic.
 
 ### Local Demo
 
