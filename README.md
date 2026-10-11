@@ -8,12 +8,15 @@ The platform is designed around a provider-oriented architecture so that geospat
 
 ---
 
-## Operational Deployment
+## Relationship to Geo-AI V4 and deployment evidence
 
-The current platform is deployed and online on **Google Cloud Run**.
+This repository contains the earlier Python/FastAPI, ML and Terraform-oriented Geo-AI implementation. It is distinct from the current **Trimindslabs-Geo-AI-V4** repository, whose deployed application uses Node.js/Express and TypeScript.
 
-| Property | Current state |
-|---|---|
+The service URL previously associated with this project is historical evidence only; this README does not assert that this repository's Python application is the code currently serving that URL. Verify the Cloud Run service's current image digest, source commit, revision and traffic before claiming a live deployment for this repository.
+
+![Predecessor architecture](./docs/diagrams/geo-ai-predecessor-architecture.svg)
+
+---|
 | Platform | Google Cloud Run |
 | Region | `europe-west1` |
 | Deployment | Cloud Run |
